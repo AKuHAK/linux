@@ -40,8 +40,9 @@ jobs:
           # Busybox will make the files it needs anyway.
           rm /srv/initramfs/lib/modules/*/{build,modules.*,source}
           make -j "$JOBS" vmlinuz
-          ln vmlinuz vmlinuz-${{ env.ARCHIVE_TAG }}1.elf
+          ln vmlinuz vmlinuz-${{ env.ARCHIVE_TAG }}.elf
           tar cvzf usr/initramfs_data.tar.gz -C /srv --exclude initramfs/lib/modules initramfs
+
 
       - name: Publish kernel
         if: ${{ success() }}
