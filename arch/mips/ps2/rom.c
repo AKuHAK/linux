@@ -78,9 +78,9 @@
 #include <asm/mach-ps2/rom.h>
 
 struct rom_dir rom0_dir;
-struct rom_dir rom1_dir;
+// struct rom_dir rom1_dir;
 EXPORT_SYMBOL_GPL(rom0_dir);
-EXPORT_SYMBOL_GPL(rom1_dir);
+// EXPORT_SYMBOL_GPL(rom1_dir);
 
 /**
  * struct rom - ROM object
@@ -694,7 +694,7 @@ static int __init ps2_rom_init(void)
 	BUILD_BUG_ON(sizeof(struct rom_extinfo_entry) != 4);
 
 	rom0_dir = rom_dir_init("rom0", ROM0_BASE, ROM0_SIZE);
-	rom1_dir = rom_dir_init("rom1", ROM1_BASE, ROM1_SIZE);
+	// rom1_dir = rom_dir_init("rom1", ROM1_BASE, ROM1_SIZE);
 
 	v = rom_version();
 	pr_info("rom0: Version %04x %s %s %04d-%02d-%02d\n",

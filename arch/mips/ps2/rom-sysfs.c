@@ -81,7 +81,7 @@ static const struct {
 	int (*func)(struct kobject *romn_kobj);
 } rom_dirs[] = {
 	{ "rom0", &rom0_dir, rom0_sysfs },
-	{ "rom1", &rom1_dir, NULL },
+	// { "rom1", &rom1_dir, NULL },
 };
 
 static struct rom_dir rom_dir_from_kobj(const struct kobject *kobj)

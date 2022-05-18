@@ -21,8 +21,8 @@ int valid_phys_addr_range(phys_addr_t addr, size_t size)
 	/* FIXME: What happens when /dev/mem writes to ROM? */
 	return addr + size <= __pa(high_memory) ||
 	       (IOP_RAM_BASE <= addr && addr + size <= IOP_RAM_BASE + IOP_RAM_SIZE) ||
-	       (ROM0_BASE <= addr && addr + size <= ROM0_BASE + ROM0_SIZE) ||
-	       (ROM1_BASE <= addr && addr + size <= ROM1_BASE + ROM1_SIZE);
+	       (ROM0_BASE <= addr && addr + size <= ROM0_BASE + ROM0_SIZE); // ||
+	    //    (ROM1_BASE <= addr && addr + size <= ROM1_BASE + ROM1_SIZE);
 }
 
 int valid_mmap_phys_addr_range(unsigned long pfn, size_t size)
@@ -40,7 +40,7 @@ void __init plat_mem_setup(void)
 
 	add_memory_region(0x00000000, 0x02000000, BOOT_MEM_RAM);
 	add_memory_region(ROM0_BASE, ROM0_SIZE, BOOT_MEM_ROM_DATA);
-	add_memory_region(ROM1_BASE, ROM1_SIZE, BOOT_MEM_ROM_DATA);
+	// add_memory_region(ROM1_BASE, ROM1_SIZE, BOOT_MEM_ROM_DATA);
 
 	set_io_port_base(CKSEG1);	/* KSEG1 is uncached */
 }
