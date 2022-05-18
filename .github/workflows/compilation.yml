@@ -7,7 +7,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: ghcr.io/AKuHAK/gentoo-mipsr5900el:main
+    container: ghcr.io/akuhak/gentoo-mipsr5900el:main
     steps:
       - uses: actions/checkout@v3
 
