@@ -618,7 +618,7 @@ static bool library_provided_by_firmware(const char *name)
 static bool library_provided(const char *name)
 {
 	return library_provided_by_rom(name, rom0_dir) ||
-	       library_provided_by_rom(name, rom1_dir) ||
+	    //    library_provided_by_rom(name, rom1_dir) ||
 	       library_provided_by_firmware(name);
 }
 

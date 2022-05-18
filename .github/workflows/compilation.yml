@@ -30,6 +30,7 @@ jobs:
           INSTALL_MOD_STRIP: 1
         run: |
           echo "dmesg | grep rom" >> $INSTALL_MOD_PATH/sbin/init
+          echo "cat /proc/cpuinfo | grep machine" >> $INSTALL_MOD_PATH/sbin/init
           JOBS="$(getconf _NPROCESSORS_ONLN)"
           reconfig() { sed -i "/$1[ =]/"'s#^.*$'"#$1=$2#" .config; }
           unconfig() { sed -i "/^$1=/"'s/^.*$'"/# $1 is not set/" .config; }

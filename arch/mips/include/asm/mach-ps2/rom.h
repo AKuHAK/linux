@@ -13,8 +13,8 @@
 #define ROM0_BASE	0x1fc00000	/* ROM0 base address (boot) */
 #define ROM0_SIZE	0x400000	/* ROM0 maximum size */
 
-#define ROM1_BASE	0x1e000000	/* ROM1 base address (DVD) */
-#define ROM1_SIZE	0x100000	/* ROM1 maximum size */
+// #define ROM1_BASE	0x1e000000	/* ROM1 base address (DVD) */
+// #define ROM1_SIZE	0x100000	/* ROM1 maximum size */
 
 struct rom_dir_entry;
 
@@ -89,7 +89,7 @@ struct rom_extinfo {
 };
 
 extern struct rom_dir rom0_dir;		/* ROM0 directory (boot) */
-extern struct rom_dir rom1_dir;		/* ROM1 directory (DVD) */
+// extern struct rom_dir rom1_dir;		/* ROM1 directory (DVD) */
 
 /**
  * rom_for_each_file - iterate over files in given ROM directory
